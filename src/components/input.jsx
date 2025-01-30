@@ -1,14 +1,17 @@
 import { useState } from "react";
 import "./style/input.css"
-const Input = ({val, setVal, vals, setVals}) => {
+const Input = ({val, setVal, setVals}) => {
     const [priority, setPriority] = useState(1);
     const addButton = () => {
         if(val.trim() ===""){
             alert("値を入力してください");
             return;
         }
-        setVals([...vals, { text: val, checked: false, priority}]);
-        setVal("");
+        setVals((prevVals) => [
+            ...prevVals,
+            { text: val, checked: false, priority }
+          ]);
+          setVal("");
     }
     const selectChange = (e) => {
         setPriority(Number(e.target.value));
@@ -20,6 +23,7 @@ const Input = ({val, setVal, vals, setVals}) => {
     type="text" 
     value={val || ""}
     onChange={(e)=> setVal(e.target.value)}
+    placeholder="やるべきこと..."
     />
     <button onClick={addButton}>追加</button>
     <div className="container">
