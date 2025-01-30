@@ -1,0 +1,61 @@
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* 下にスペースを追加 */
+}
+.input-container input {
+    width: 250px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    margin-right: 10px; /* ボタンとの間隔を調整 */
+}
+
+.input-container input:focus {
+    outline: 0;
+    border: 2px solid #2196f3;
+}
+
+.input-container button {
+    margin-right: 10px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    -webkit-box-shadow: inset 1px 1px 1px #fff;
+    box-shadow: inset 1px 1px 1px #fff;
+}
+
+.input-container button:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
+.container select{
+    position: relative;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center; 
+  }
+  .container {
+      position: relative;
+      width: 70px;
+  }
+  .container:after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      top: 12px;
+      width: 5px;
+      height: 5px;
+      border-top: 2px solid skyblue;
+      border-left: 2px solid skyblue;
+      pointer-events: none;
+      transform: translateY(-50%) rotate(
+  -135deg);
+  }

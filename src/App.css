@@ -1,0 +1,13 @@
+body {
+    display: flex; 
+    justify-content: center; 
+    height: 100vh; 
+    background-color: #f8fbff;
+    margin: 0;
+}
+.head {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+    margin-bottom: 20px; /* 下にスペースを追加 */
+}
