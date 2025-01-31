@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./style/input.css"
 const Input = ({val, setVal, setVals}) => {
     const [priority, setPriority] = useState(1);
-    const addButton = () => {
+    const addButton = (e) => {
+        e.preventDefault();
         if(val.trim() ===""){
             alert("値を入力してください");
             return;
@@ -19,13 +20,15 @@ const Input = ({val, setVal, setVals}) => {
     
     return (
     <div className="input-container">
+    <form onSubmit={addButton}>
     <input 
     type="text" 
     value={val || ""}
     onChange={(e)=> setVal(e.target.value)}
     placeholder="やるべきこと..."
     />
-    <button onClick={addButton}>追加</button>
+    <button>追加</button>
+    </form>
     <div className="container">
     <select name="priorityA" value={priority} onChange={selectChange}>
         <option value={1}>大</option>
