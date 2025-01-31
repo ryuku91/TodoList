@@ -3,9 +3,10 @@ import "./style/display.css"
 const Display = ({vals, setVals}) => {
     const [sort, setSort] = useState(1);
 
-    const handleCheck = (index) => {
-    const newVals = [...vals];
-    newVals[index].checked = !newVals[index].checked;
+    const handleCheck = (id) => {
+      const newVals = vals.map(item =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+    );
     setVals(newVals);
    }
 
@@ -29,18 +30,21 @@ const Display = ({vals, setVals}) => {
         <option value={2}>優先順</option>
     </select>
     <ul className="checkbox-list">
-      {sortedVals.map((item, index) => (
-        <li key={index} className="checkbox-item">
-          
+      {sortedVals.map((item) => (
+        
+        <li key={item.id} className="checkbox-item">
+        <label >
             <input
               type="checkbox"
               checked={item.checked}
               value={item.text}
-              onChange={() => handleCheck(index)}
+              onChange={() => handleCheck(item.id)}
             />
             {item.text}
-          
+            </label>
+            <p>({item.createAt})</p>
         </li>
+        
       ))}
     </ul>
     </>

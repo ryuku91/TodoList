@@ -10,7 +10,7 @@ const Input = ({val, setVal, setVals}) => {
         }
         setVals((prevVals) => [
             ...prevVals,
-            { text: val, checked: false, priority }
+            { id: Date.now(), text: val, checked: false, priority, createAt: new Date().toLocaleString() }
           ]);
           setVal("");
     }
